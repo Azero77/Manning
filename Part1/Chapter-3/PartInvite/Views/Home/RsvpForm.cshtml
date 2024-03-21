@@ -1,0 +1,43 @@
+﻿
+@model PartInvite.Models.GuestResponse
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=devicd-width" />
+        <title>
+            RsvpForm
+        </title>
+    </head>
+    <body>
+        <div>
+            <form class="form" method="post">
+                <div class="form-control">
+                    <label asp-for="Name"></label>
+                    <input asp-for ="Name" />
+                </div>
+                <div class="form-control">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" />
+                </div>
+                <div class="form-control">
+                    <label asp-for="Phone"></label>
+                    <input asp-for="Phone" />
+                </div>
+                <div>
+                    <select asp-for = "WillAttend">
+                        <option value="" selected >Select An option</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

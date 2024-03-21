@@ -1,0 +1,35 @@
+﻿@using PartInvite.Models
+@{
+    Layout = null;
+}
+@model IEnumerable<GuestResponse>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Coming
+    </title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(GuestResponse response in Model)
+            {
+                <tr>
+                    <td>@response.Name</td>
+                    <td>@response.Email</td>
+                    <td>@response.Phone</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-action="RsvpForm">Rsvp Now</a>
+</body>
+</html>

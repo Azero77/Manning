@@ -1,0 +1,32 @@
+﻿@model PartInvite.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Answer
+        </title>
+    </head>
+    <body>
+    
+    @if ((bool) Model.WillAttend)
+    {
+        <h2>
+            Thanks @Model.Name For Coming
+        </h2>
+        <span>See Who is</span>
+        <a asp-action="Coming">coming</a>
+    }
+    else
+    {
+        <h2>
+            Sorry That you can't make it...
+        </h2>
+    }
+</body>
+</html>

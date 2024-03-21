@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "C3LDaWrV9vGxTV3WJsKq+2rnVRE+Mz8u+sYnWIRiMajT34hyh1iza+uDF+qg4IHenEDVRp0gsJGbpRv40KywJA==",
+  "success": true,
+  "projectFilePath": "C:\\Azero\\Manning\\Part1\\Chapter-4\\MySolution\\MyProject\\MyProject.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mazag\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\mazag\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\mazag\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\mazag\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.14\\microsoft.netcore.app.host.win-x64.7.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}

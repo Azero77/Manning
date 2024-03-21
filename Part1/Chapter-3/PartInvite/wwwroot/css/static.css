@@ -1,0 +1,16 @@
+﻿body{
+    background : red;
+}
+
+.input-validation-error {
+    border: 2px solid red;
+    background: #fee;
+}
+
+.validation-summary-errors {
+    color: red;
+    font-weight: bold;
+}
+.validation-summary-valid {
+    display:none;
+}

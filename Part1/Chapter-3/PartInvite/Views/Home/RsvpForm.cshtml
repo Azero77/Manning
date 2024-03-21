@@ -11,24 +11,29 @@
         <title>
             RsvpForm
         </title>
+        <link rel="stylesheet" href="/css/static.css" />
+        <link rel="stylesheet" href ="/lib/bootstrap/dist/css/bootstrap.css" />
     </head>
     <body>
         <div>
-            <form class="form" method="post">
-                <div class="form-control">
-                    <label asp-for="Name"></label>
+            <h5 class="text-center text-white bg-primary m-2 p-2">RSVP</h5>
+            <form class="form" method="post" class ="m-2">
+                <div class="Validations" asp-validation-summary="All">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Name" class ="form-label"></label>
                     <input asp-for ="Name" />
                 </div>
-                <div class="form-control">
-                    <label asp-for="Email"></label>
+                <div class="form-group">
+                    <label asp-for="Email" class = "form-label"></label>
                     <input asp-for="Email" />
                 </div>
-                <div class="form-control">
-                    <label asp-for="Phone"></label>
+                <div class="form-group">
+                    <label asp-for="Phone" class = "form-label"></label>
                     <input asp-for="Phone" />
                 </div>
                 <div>
-                    <select asp-for = "WillAttend">
+                    <select asp-for = "WillAttend" class="form-select">
                         <option value="" selected >Select An option</option>
                         <option value="true">Yes</option>
                         <option value="false">No</option>

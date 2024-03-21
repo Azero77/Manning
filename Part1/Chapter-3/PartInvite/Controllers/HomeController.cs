@@ -17,8 +17,12 @@ namespace PartInvite.Controllers
         [HttpPost]
         public IActionResult RsvpForm(GuestResponse response) 
         {
-            Repository.AddResponse(response);
-            return View("Answer" , response);
+            if (ModelState.IsValid)
+            {
+                Repository.AddResponse(response);
+                return View("Answer", response);
+            }
+            return View();
         }
 
         public IActionResult Coming()

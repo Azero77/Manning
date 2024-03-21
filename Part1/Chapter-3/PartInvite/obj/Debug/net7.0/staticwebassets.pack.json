@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Azero\\Manning\\Part1\\Chapter-3\\PartInvite\\wwwroot\\css\\static.css",
+      "PackagePath": "staticwebassets\\css\\static.css"
+    },
+    {
       "Id": "C:\\Azero\\Manning\\Part1\\Chapter-3\\PartInvite\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },

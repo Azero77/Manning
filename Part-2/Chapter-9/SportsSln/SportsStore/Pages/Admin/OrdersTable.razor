@@ -1,0 +1,61 @@
+﻿@page "/admin/order"
+@using SportsStore.Models
+
+<h3>OrdersTable</h3>
+<table>
+    <thead>
+        <tr>
+            <th>
+                @TableTitle
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Order order in Orders ?? Enumerable.Empty<Order>())
+        {
+            <tr>
+                <td>
+                    @order.Name
+                </td>
+                <td>
+                    @order.City
+                </td>
+                <th>Product</th>
+                <th>Quantity</th>
+                <td>
+                    <button @onclick="@(p => OnButtonClick.InvokeAsync(order.OrderID))">
+                        @ButtonLabeled
+                    </button>
+                </td>
+            </tr>
+                @foreach(var cartline in order.cartLines)
+                {
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            @cartline.Product.Name
+                        </td>
+                        <td>
+                            @cartline.Quantity
+                        </td>
+                    </tr>
+                }
+
+        }
+
+    </tbody>
+</table>
+
+@code 
+{
+    [Parameter]
+    public string? TableTitle { get; set; } = "UnShipped";
+    [Parameter]
+    public IEnumerable<Order> Orders { get; set; }
+    [Parameter]
+    public string ButtonLabeled { get; set; } = "Ship";
+    [Parameter]
+    public EventCallback<int> OnButtonClick { get; set; }
+
+}

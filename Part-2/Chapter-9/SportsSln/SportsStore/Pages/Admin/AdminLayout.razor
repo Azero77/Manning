@@ -1,0 +1,35 @@
+﻿@using Microsoft.AspNetCore.Components.Routing
+@inherits LayoutComponentBase
+<div>
+    <div class="bg-info text-white p-2">
+        <span class="navbarfa-brands ml-2">
+            Sports Store Administration
+        </span>
+    </div>
+    <div class="container-fluid">
+        <div class="row p-2">
+            <div class="col-3">
+                <div class="d-grid gap-2">
+                    <NavLink 
+                            class="btn btn-outline-primary"
+                            href="/admin/products"
+                        ActiveClass="btn btn-primary text-white"
+                            Match="NavLinkMatch.Prefix"
+                    >
+                    Products
+                    </NavLink>
+                    <NavLink
+                             href="/admin/orders"
+                             class="btn btn-outline-primary"
+                        ActiveClass="btn btn-primary text-white"
+                             Match="NavLinkMatch.Prefix">
+                             Orders
+                     </NavLink>
+                </div>
+            </div>
+            <div class="col">
+                @Body
+            </div>
+        </div>
+    </div>
+</div>

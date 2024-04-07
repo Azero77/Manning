@@ -1,0 +1,79 @@
+﻿@page "/admin/products/edit/{id:long}"
+@page "/admin/products/create"
+@inherits OwningComponentBase<IStoreRepository>
+
+
+<h2>
+    @ThemeText
+</h2>
+<EditForm Model = "p" OnValidSubmit="SaveProduct">
+    <DataAnnotationsValidator/>
+    @if (p.ProductID.HasValue && p.ProductID != 0)
+    {
+        <div>
+            <label>Id:</label>
+            <input disabled value="@p.ProductID" />
+        </div>   
+        
+    }
+    <div class="form-group">
+        <label>Name</label>
+        <ValidationMessage For="() => p.Name" />
+        <InputText class="form-control" @bind-Value="p.Name" />
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <ValidationMessage For="@(() => p.Description)" />
+        <InputText class="form-control"
+                   @bind-Value="p.Description" />
+    </div>
+    <div class="form-group">
+        <label>Category</label>
+        <ValidationMessage For="@(() => p.Category)" />
+        <InputText class="form-control" @bind-Value="p.Category" />
+    </div>
+    <div class="form-group">
+        <label>Price</label>
+        <ValidationMessage For="@(() => p.Price)" />
+        <InputNumber class="form-control" @bind-Value="p.Price" />
+    </div>
+    <div class="mt-2">
+        <button type="submit" class="btn btn-@ThemeColor">Save</button>
+        <NavLink class="btn btn-secondary" href="/admin/products">
+            Cancel
+        </NavLink>
+    </div>
+</EditForm>
+
+
+@code
+{
+    [Parameter]
+    public long Id{ get; set; }
+    public Product p { get; set; } = new();
+    public IStoreRepository Repo => Service;
+    [Inject]
+    public NavigationManager? navigationManager{ get; set; }
+    protected override void OnParametersSet()
+    {
+        if (Id != 0)
+            p = Repo.Products.FirstOrDefault(p => p.ProductID == Id) ?? new();
+    }
+
+    public void SaveProduct()
+    {
+        if (Id == 0)
+        {
+            Repo.AddProduct(p);
+        }
+        else
+        {
+            Repo.SaveProduct(p);
+        }
+        navigationManager?.NavigateTo("/admin/products");
+
+    }
+
+    public string ThemeColor => Id == 0 ? "primary" : "warning";
+    public string ThemeText => Id == 0 ? "Create" : "Edit";
+}

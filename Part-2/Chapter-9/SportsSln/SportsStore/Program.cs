@@ -13,11 +13,11 @@ builder.Services.AddDbContext<StoreDbContext>(opts =>
 builder.Services.AddScoped<IStoreRepository, EFStoreRepository>();
 builder.Services.AddScoped<IOrderRepository, EFOrderRepository>();
 builder.Services.AddRazorPages();
-builder.Services.AddServerSideBlazor();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession();
 builder.Services.AddScoped(srv => SessionCart.GetCart(srv));
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddServerSideBlazor();
 var app = builder.Build();
 
 //app.MapGet("/", () => "Hello World!";
@@ -44,8 +44,9 @@ app.MapControllerRoute("Products",
     "Products/Page{PageNumber:int}",
     new { controller = "Home", action = "Index" });
 
-app.MapRazorPages();
 app.MapDefaultControllerRoute();
+app.MapRazorPages();
 app.MapBlazorHub();
+app.MapFallbackToPage("/admin/{*catchall}" , "/Admin/Index");
 app.EnsureIsPopulated();
 app.Run();

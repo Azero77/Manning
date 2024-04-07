@@ -1,0 +1,90 @@
+﻿@page "/admin/products"
+@page "/admin"
+@inherits OwningComponentBase<IStoreRepository>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Category
+            </th>
+            <th>
+                Price
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Product p in products ?? Enumerable.Empty<Product>())
+        {
+            <tr>
+                <td>
+                    @p.ProductID
+                </td>
+                <td>
+                    @p.Name
+                </td>
+                <td>
+                    @p.Category
+                </td>
+                <td>
+                    @p.Price.ToString("c")
+                </td>
+                <td>
+                    <NavLink
+                        class="btn btn-warning"
+                        ActiveClass="btn btn-success"
+                        href ="@GetEditUrl((int) p.ProductID)">
+                        Edit
+                    </NavLink>
+                    <NavLink class="btn btn-info"
+                             href="@GetDetailUrl((int) p.ProductID)">
+                        Details
+                    </NavLink>
+                    <button class="btn  btn-danger" @onclick = "@(async () => await DeleteProduct(p))">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <NavLink class="btn btn-primary" href="/admin/products/create">Create></NavLink>
+        
+</table>
+
+
+
+
+
+
+@code{
+    IStoreRepository Repo => Service;
+
+    public IEnumerable<Product> products{ get; set; }
+
+    public async Task UpdateData()
+    {
+        products = await Repo.Products.ToListAsync(); 
+    }
+
+    protected async override Task OnInitializedAsync()
+    {
+        await UpdateData();    
+    }
+
+    public async Task DeleteProduct(Product p)
+    {
+        Repo.RemoveProduct(p);
+        await UpdateData();
+    }
+    public string GetEditUrl(long ProductID) => $"/admin/products/edit/{ProductID}";
+    public string GetDetailUrl(long ProductID) => $"/admin/products/details/{ProductID}";
+
+    
+
+}

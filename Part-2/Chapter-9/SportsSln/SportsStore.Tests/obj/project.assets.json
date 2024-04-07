@@ -8462,11 +8462,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Azero\\Manning\\Part-2\\Chapter-8\\temp\\SportsSln\\SportsStore.Tests\\SportsStore.Tests.csproj",
+      "projectUniqueName": "C:\\Azero\\Manning\\Part-2\\Chapter-9\\SportsSln\\SportsStore.Tests\\SportsStore.Tests.csproj",
       "projectName": "SportsStore.Tests",
-      "projectPath": "C:\\Azero\\Manning\\Part-2\\Chapter-8\\temp\\SportsSln\\SportsStore.Tests\\SportsStore.Tests.csproj",
+      "projectPath": "C:\\Azero\\Manning\\Part-2\\Chapter-9\\SportsSln\\SportsStore.Tests\\SportsStore.Tests.csproj",
       "packagesPath": "C:\\Users\\mazag\\.nuget\\packages\\",
-      "outputPath": "C:\\Azero\\Manning\\Part-2\\Chapter-8\\temp\\SportsSln\\SportsStore.Tests\\obj\\",
+      "outputPath": "C:\\Azero\\Manning\\Part-2\\Chapter-9\\SportsSln\\SportsStore.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mazag\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8483,8 +8483,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Azero\\Manning\\Part-2\\Chapter-8\\temp\\SportsSln\\SportsStore\\SportsStore.csproj": {
-              "projectPath": "C:\\Azero\\Manning\\Part-2\\Chapter-8\\temp\\SportsSln\\SportsStore\\SportsStore.csproj"
+            "C:\\Azero\\Manning\\Part-2\\Chapter-9\\SportsSln\\SportsStore\\SportsStore.csproj": {
+              "projectPath": "C:\\Azero\\Manning\\Part-2\\Chapter-9\\SportsSln\\SportsStore\\SportsStore.csproj"
             }
           }
         }

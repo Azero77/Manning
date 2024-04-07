@@ -28,5 +28,8 @@ namespace SportsStore.Models
         [Required(ErrorMessage="Name Country is Required")]
         public string? Country { get; set; }
         public bool GiftWrap { get; set; }
+
+        [BindNever]
+        public bool Shipped { get; set; }
     }
 }

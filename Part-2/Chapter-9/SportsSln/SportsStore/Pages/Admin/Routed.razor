@@ -1,0 +1,15 @@
+﻿@using Microsoft.AspNetCore.Components.Routing
+
+<Router AppAssembly="typeof(Program).Assembly">
+    <Found>
+        <RouteView
+            RouteData="@context"
+            DefaultLayout="typeof(AdminLayout)"
+        />
+    </Found>
+    <NotFound>
+        <h4 class="text-danger text-center">
+            No Matching Route
+        </h4>
+    </NotFound>
+</Router>

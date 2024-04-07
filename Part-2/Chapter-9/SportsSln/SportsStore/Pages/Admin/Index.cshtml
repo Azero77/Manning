@@ -1,0 +1,20 @@
+﻿@page "/admin"
+@using SportsStore.Pages.Admin
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Sports Store Administrations
+        </title>
+        <link href="~/lib/bootstrap/css/bootstrap.css" rel ="stylesheet"/>
+        <base href="/" />
+    </head>
+    <body>
+        <component type="typeof(Routed)" render-mode="Server" />
+        <script src="_framework/blazor.server.js"></script>
+    </body>
+</html>
